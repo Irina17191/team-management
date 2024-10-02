@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from teams.models import Team, Person
+from teams.serializers import TeamSerializer, PersonSerializer
 
-# Create your views here.
+
+class TeamViewSet(viewsets.ModelViewSet):
+    queryset = Team.objects.all()
+    serializer_class = TeamSerializer
+
+
+class PersonViewSet(viewsets.ModelViewSet):
+    queryset = Person.objects.all()
+    serializer_class = PersonSerializer
