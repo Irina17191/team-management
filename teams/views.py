@@ -4,7 +4,7 @@ from teams.serializers import TeamSerializer, PersonSerializer
 
 
 class TeamViewSet(viewsets.ModelViewSet):
-    queryset = Team.objects.all()
+    queryset = Team.objects.prefetch_related("persons").all()
     serializer_class = TeamSerializer
 
 
