@@ -25,8 +25,12 @@ class Person(models.Model):
     email = models.EmailField(unique=True)
     teams = models.ManyToManyField(Team, blank=True, related_name="persons")
 
-    def __str__(self):
+    @property
+    def full_name(self):
         return f"{self.name} {self.last_name}"
+
+    def __str__(self):
+        return self.full_name
 
     class Meta:
         ordering = ["name"]
