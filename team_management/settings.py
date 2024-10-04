@@ -15,6 +15,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -98,6 +100,7 @@ DATABASES = {
         "PORT": os.environ["POSTGRES_PORT"],
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
