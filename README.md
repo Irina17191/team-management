@@ -11,6 +11,7 @@ The API allows users to create, read, update, and delete (CRUD) teams and people
 - **Documentation** using drf-spectacular.
 - **Docker** and **Docker Compose** support for easy setup and deployment.
 - Connection to a **PostgreSQL** database.
+- Django Debug Toolbar.
 
 ## Models
 
@@ -85,6 +86,7 @@ The API will be available at:
 
 The admin panel can be accessed at:
 - `http://localhost:8000/admin/`
+- `http://127.0.0.1:8000/admin/`
 
 
 ## API Endpoints
@@ -142,4 +144,15 @@ To run the tests, use the following command:
 docker-compose exec django_app python manage.py test
 ```
 
-For any questions or feedback, please reach out to me at iryna.honcharenko.python@gmail.com.
+For any questions or feedback, please reach out to me at iryna.honcharenko.python@gmail.com.  
+
+Here are screenshots of the application:  
+![Application Screenshot](images/1.png)  
+
+![Application Screenshot](images/2.png)  
+
+![Application Screenshot](images/3.png)
+
+![Application Screenshot](images/4.png)  
+
+![Application Screenshot](images/5.png)
