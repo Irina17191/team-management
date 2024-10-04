@@ -8,15 +8,36 @@ from teams.serializers import TeamSerializer, PersonSerializer
 
 
 class PersonViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet for managing persons.
+
+    Provides CRUD operations for Person objects, including
+    listing, creating, retrieving, updating, and deleting
+    persons.
+    """
     queryset = Person.objects.prefetch_related("teams").all()
     serializer_class = PersonSerializer
 
 
 class TeamViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet for managing teams.
+
+    Provides CRUD operations for Team objects, including
+    listing, creating, retrieving, updating, and deleting
+    teams. Supports filtering by team name.
+    """
     queryset = Team.objects.prefetch_related("persons").all()
     serializer_class = TeamSerializer
 
     def get_queryset(self):
+        """
+        Optionally filters the queryset based on the 'name' query parameter.
+
+        If the 'name' parameter is provided in the request,
+        the queryset will be filtered to include only teams
+        with names that contain the specified value.
+        """
         name = self.request.query_params.get("name")
         queryset = self.queryset
 
